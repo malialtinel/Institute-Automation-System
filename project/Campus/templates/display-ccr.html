@@ -1,0 +1,74 @@
+{% extends 'base.html' %}
+{% block content %}
+
+<div class="row">
+    <div class="col-md-6"  style="margin-top: 10px;">
+        <div class="col-md-12">
+<div class="container">
+<h2>Completed Courses</h2>
+             
+  <table class="table table-hover col-md-6">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Course Code</th>
+        <th>Grade</th>
+
+      </tr>
+    </thead>
+    <tbody>
+
+
+{% for i in completedCourses %}
+      <tr>
+        <td>{{ i.act_course.title }}</td>
+        <td>{{ i.act_course.code }}</td>
+        <td>{{ i.grade }}</td>
+      </tr>
+     
+{% endfor %}
+    </tbody>
+  </table>
+
+</div>
+</div>
+</div>
+ 
+</div>
+ <div class="col-md-6"  style="margin-top: 10px;">
+        <div class="col-md-12">
+
+<div class="container">
+
+<h2>Taken Courses</h2>
+              
+  <table class="table table-hover col-md-6">
+    <thead>
+      <tr>
+        <th>Course Name</th>
+        <th>Course Code</th>
+        <th>Year</th>
+        <th>Term</th>
+         
+      </tr>
+    </thead>
+    <tbody>
+
+
+{% for i in takenCourses %}
+      <tr>
+        <td>{{ i.act_course.course.title }}</td>
+        <td>{{ i.act_course.course.code }}</td>
+        <td>{{ i.act_course.year }}</td>
+        <td>{{ i.act_course.semester }}</td>
+      </tr>
+     
+{% endfor %}
+    </tbody>
+  </table>
+
+</div>
+</div>
+</div>
+
+{% endblock content %}
